@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore TechZentra internship opportunities and practical industry experiences.">
+  <title>Internships | TechZentra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./internship.css">
+  <link rel="stylesheet" href="../../css/home.css">
+  <link rel="stylesheet" href="../../css/site-footer.css">
+</head>
+<body>
+  <header class="site-header" id="site-header" aria-label="Main navigation"></header>
+  <script>
+    (function () {
+      var header = document.getElementById('site-header');
+      if (!header || header.querySelector('.nav-links')) return;
+
+      header.innerHTML = `
+        <div class="container nav">
+          <a class="brand" href="/index.html" aria-label="Tech Zentra home">
+            <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+            <span class="brand-word">TECH<span>ZENTRA</span></span>
+          </a>
+
+          <nav class="nav-links" aria-label="Primary">
+            <a href="/index.html" class="is-active">Home</a>
+            <a href="/pages/course-details/index.html#home">Courses</a>
+            <a href="/pages/internships/index.html">Internships</a>
+            <a href="/pages/placements/index.html">Placements</a>
+            <a href="/pages/testimonials/index.html">Success</a>
+            <a href="/contact.html">Contact</a>
+          </nav>
+
+          <div class="nav-actions">
+            <a href="/contact.html" class="btn btn-primary btn-sm nav-cta">Start Learning <span class="arrow">→</span></a>
+            <button
+              class="menu-toggle"
+              id="menu-toggle"
+              type="button"
+              aria-label="Open menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+          <nav class="mobile-nav" aria-label="Mobile navigation">
+            <a href="/index.html" aria-current="page">Home</a>
+            <a href="/pages/course-details/index.html#home">Courses</a>
+            <a href="/pages/internships/index.html">Internships</a>
+            <a href="/pages/placements/index.html">Placements</a>
+            <a href="/pages/testimonials/index.html">Success</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/contact.html" class="btn btn-primary">Start Learning <span class="arrow">→</span></a>
+          </nav>
+        </div>
+      `;
+
+      var script = document.createElement('script');
+      script.src = '../../js/home.js';
+      script.defer = true;
+      document.body.appendChild(script);
+    })();
+  </script>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">TECHZENTRA CAREERS</p>
+          <h1>Turn your skills into <span>real-world experience.</span></h1>
+          <p class="hero-description">Discover meaningful internship opportunities, gain industry exposure, work on real-world projects and build the experience that moves your career forward.</p>
+          <form class="hero-search" id="hero-search">
+            <label class="sr-only" for="hero-query">Search role, technology, skill or company</label>
+            <span aria-hidden="true">⌕</span>
+            <input id="hero-query" type="search" placeholder="Role, technology, skill or company">
+            <button type="submit">Search</button>
+          </form>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#opportunities">Explore Opportunities <span>↗</span></a>
+            <a class="button button-secondary" href="#experiences">Explore Projects</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image"></div>
+          <div class="hero-note">
+            <span>01</span>
+            <p>Learn by doing.<br>Grow with purpose.</p>
+          </div>
+          <div class="hero-tag">Build your portfolio</div>
+        </div>
+      </div>
+      <div class="shell metrics" aria-label="Demonstration page metrics">
+        <div><strong>8</strong><span>Demo opportunities</span></div>
+        <div><strong>10</strong><span>Career categories</span></div>
+        <div><strong>6</strong><span>Industry domains</span></div>
+        <p>Metrics shown are demonstration values.</p>
+      </div>
+    </section>
+
+    <section class="section categories-section" id="categories">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">EXPLORE YOUR PATH</p><h2>Find your direction</h2></div>
+          <p>Choose a field and discover the practical skills, projects and opportunities that can help you begin.</p>
+        </div>
+        <div class="category-grid" id="category-grid"></div>
+      </div>
+    </section>
+
+    <section class="section explorer-section" id="opportunities">
+      <div class="shell">
+        <div class="section-heading explorer-heading">
+          <div><p class="eyebrow">INTERNSHIP OPPORTUNITIES</p><h2>Discover your next opportunity</h2></div>
+          <p class="demo-label">Sample listings for demonstration</p>
+        </div>
+        <div class="explorer-toolbar">
+          <div class="explorer-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="explorer-search" type="search" placeholder="Search role, company, skill or keyword">
+          </div>
+          <button class="filter-toggle button button-secondary" id="filter-toggle" aria-expanded="false">Filters <span id="active-filter-count"></span></button>
+          <label class="sort-control">Sort by
+            <select id="sort-select">
+              <option value="newest">Newest</option>
+              <option value="stipend">Highest stipend</option>
+              <option value="relevance">Relevance</option>
+            </select>
+          </label>
+        </div>
+        <div class="explorer-layout">
+          <aside class="filters" id="filters" aria-label="Internship filters">
+            <div class="filter-header"><strong>Filters</strong><button id="clear-filters">Clear all</button></div>
+            <fieldset>
+              <legend>Category</legend>
+              <label><input type="checkbox" name="category" value="Software Development"> Software Development</label>
+              <label><input type="checkbox" name="category" value="Data Science"> Data Science</label>
+              <label><input type="checkbox" name="category" value="AI / ML"> AI / ML</label>
+              <label><input type="checkbox" name="category" value="Web Development"> Web Development</label>
+              <label><input type="checkbox" name="category" value="UI/UX Design"> UI/UX Design</label>
+              <label><input type="checkbox" name="category" value="Cybersecurity"> Cybersecurity</label>
+              <label><input type="checkbox" name="category" value="Cloud Computing"> Cloud Computing</label>
+              <label><input type="checkbox" name="category" value="Product Management"> Product Management</label>
+              <label><input type="checkbox" name="category" value="Business Analytics"> Business Analytics</label>
+              <label><input type="checkbox" name="category" value="Digital Marketing"> Digital Marketing</label>
+            </fieldset>
+            <fieldset>
+              <legend>Work mode</legend>
+              <label><input type="radio" name="mode" value=""> Any</label>
+              <label><input type="radio" name="mode" value="Remote"> Remote</label>
+              <label><input type="radio" name="mode" value="Hybrid"> Hybrid</label>
+              <label><input type="radio" name="mode" value="On-site"> On-site</label>
+            </fieldset>
+            <fieldset>
+              <legend>Internship type</legend>
+              <label><input type="checkbox" name="type" value="Full-time"> Full-time</label>
+              <label><input type="checkbox" name="type" value="Part-time"> Part-time</label>
+            </fieldset>
+            <fieldset>
+              <legend>Compensation</legend>
+              <label><input type="radio" name="paid" value=""> Any</label>
+              <label><input type="radio" name="paid" value="paid"> Paid</label>
+              <label><input type="radio" name="paid" value="unpaid"> Unpaid</label>
+            </fieldset>
+            <fieldset>
+              <legend>Minimum stipend</legend>
+              <input class="range" id="stipend-range" type="range" min="0" max="30000" step="5000" value="0">
+              <div class="range-labels"><span>₹0</span><span id="stipend-value">₹0+</span></div>
+            </fieldset>
+            <fieldset>
+              <legend>Duration</legend>
+              <select id="duration-filter">
+                <option value="">Any duration</option>
+                <option value="2">2 months</option>
+                <option value="3">3 months</option>
+                <option value="4">4 months or more</option>
+              </select>
+            </fieldset>
+          </aside>
+          <div class="opportunity-results">
+            <div class="results-summary"><strong id="results-count">0 opportunities</strong><span>Showing demonstration listings</span></div>
+            <div class="opportunity-grid" id="opportunity-grid" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section">
+      <div class="shell">
+        <div class="section-heading centered"><p class="eyebrow">HOW IT WORKS</p><h2>Your path from interest to impact</h2></div>
+        <div class="process-grid">
+          <article><span>01</span><div class="process-icon">⌕</div><h3>Explore</h3><p>Discover internships according to your skills and interests.</p></article>
+          <article><span>02</span><div class="process-icon">▤</div><h3>Review</h3><p>Understand responsibilities, eligibility, skills and duration.</p></article>
+          <article><span>03</span><div class="process-icon">↗</div><h3>Apply</h3><p>Submit through the supported application process.</p></article>
+          <article><span>04</span><div class="process-icon">◎</div><h3>Track</h3><p>Monitor status where application tracking is available.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experiences-section" id="experiences">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">VIRTUAL INTERNSHIPS</p><h2>Experience the industry before your first job.</h2></div>
+          <p>Build practical confidence through guided projects inspired by real workplace challenges.</p>
+        </div>
+        <div class="experience-grid" id="experience-grid"></div>
+      </div>
+    </section>
+
+    <section class="section career-section" id="career">
+      <div class="shell">
+        <div class="section-heading"><p class="eyebrow">CAREER PREPARATION</p><h2>Get ready for what comes next</h2></div>
+        <div class="career-grid">
+          <article><span>01</span><h3>Resume building</h3><p>Create a clear, skills-first resume.</p><button class="text-action">Build your resume →</button></article>
+          <article><span>02</span><h3>LinkedIn profile</h3><p>Present your experience and goals with confidence.</p><button class="text-action">Improve your profile →</button></article>
+          <article><span>03</span><h3>Interview preparation</h3><p>Practice common questions and thoughtful answers.</p><button class="text-action">Start preparing →</button></article>
+          <article><span>04</span><h3>Technical interviews</h3><p>Sharpen your reasoning and problem-solving.</p><button class="text-action">Practice problems →</button></article>
+          <article><span>05</span><h3>Portfolio development</h3><p>Showcase work that demonstrates real capability.</p><button class="text-action">Explore portfolio tips →</button></article>
+          <article><span>06</span><h3>GitHub profile</h3><p>Organise projects and communicate your process.</p><button class="text-action">Improve your GitHub →</button></article>
+          <article><span>07</span><h3>Professional communication</h3><p>Build clarity for teams, meetings and presentations.</p><button class="text-action">View communication tips →</button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stories-section">
+      <div class="shell story-layout">
+        <div class="story-image" role="img" aria-label="Students collaborating on technology projects"></div>
+        <div class="story-copy">
+          <p class="eyebrow">STUDENT EXPERIENCES</p>
+          <h2>Learning becomes meaningful when it becomes experience.</h2>
+          <div class="placeholder-story">
+            <span>STORY SPOTLIGHT</span>
+            <p>Student experiences and verified testimonials will appear here as they become available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="shell faq-layout">
+        <div class="faq-heading"><p class="eyebrow">FAQ</p><h2>Questions, answered.</h2><p>Everything you need to know before taking the next step.</p></div>
+        <div class="accordion" id="faq-list"></div>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="shell closing-inner">
+        <p class="eyebrow">START YOUR JOURNEY</p>
+        <h2>Your career doesn’t start after graduation.<br><span>It starts with experience.</span></h2>
+        <p>Find opportunities, build practical skills and take the next step towards your professional journey.</p>
+        <a class="button button-primary" href="#opportunities">Explore Internships <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner"><a class="brand" href="/index.html"><span class="brand-mark">TZ</span><span>TechZentra</span></a><p>Learn. Build. Advance.</p><span>© 2026 TechZentra</span></div>
+  </footer>
+
+  <dialog id="detail-dialog" class="detail-dialog">
+    <button class="dialog-close" aria-label="Close internship details">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <script src="./internship.js"></script>
+  <script src="../../js/site-footer.js" defer></script>
+</body>
+</html>

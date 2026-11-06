@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Placements & Career Opportunities | Tech Zentra</title>
+    <meta name="description" content="Discover Tech Zentra's placement assistance, career support, hiring partners, and student success stories across Cloud, DevOps, Full Stack, and Data Science." />
+    <meta name="keywords" content="Tech Zentra placements, job guarantee, tech jobs, software engineering placements, AWS placements, DevOps jobs, Python full stack career, tech interview preparation" />
+    <meta name="author" content="Tech Zentra" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Placements & Career Opportunities | Tech Zentra" />
+    <meta property="og:description" content="Your Skills. Your Projects. Your Next Opportunity. Explore Tech Zentra's placement roadmap and student success stories." />
+    <meta property="og:site_name" content="Tech Zentra" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./css/tailwind.css" />
+
+    <!-- GSAP & Lenis libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../../css/home.css" />
+    <link rel="stylesheet" href="../../css/site-footer.css">
+</head>
+  <body class="page-placements">
+    <div id="cursor-glow" aria-hidden="true"></div>
+    <a href="#hero-placements" class="skip-link">Skip to content</a>
+
+    <header class="site-header" id="site-header" aria-label="Main navigation"></header>
+    <script>
+      (function () {
+        var header = document.getElementById('site-header');
+        if (!header || header.querySelector('.nav-links')) return;
+
+        header.innerHTML = `
+          <div class="container nav">
+            <a class="brand" href="/index.html" aria-label="Tech Zentra home">
+              <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+              <span class="brand-word">TECH<span>ZENTRA</span></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Primary">
+              <a href="/index.html" class="is-active">Home</a>
+              <a href="/pages/course-details/index.html#home">Courses</a>
+              <a href="/pages/internships/index.html">Internships</a>
+              <a href="/pages/placements/index.html">Placements</a>
+              <a href="/pages/testimonials/index.html">Success</a>
+              <a href="/contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+              <a href="/contact.html" class="btn btn-primary btn-sm nav-cta">Start Learning <span class="arrow">→</span></a>
+              <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+              >
+                <span></span><span></span><span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+              <a href="/index.html" aria-current="page">Home</a>
+              <a href="/pages/course-details/index.html#home">Courses</a>
+              <a href="/pages/internships/index.html">Internships</a>
+              <a href="/pages/placements/index.html">Placements</a>
+              <a href="/pages/testimonials/index.html">Success</a>
+              <a href="/contact.html">Contact</a>
+              <a href="/contact.html" class="btn btn-primary">Start Learning <span class="arrow">→</span></a>
+            </nav>
+          </div>
+        `;
+
+        var script = document.createElement('script');
+        script.src = '../../js/home.js';
+        script.defer = true;
+        document.body.appendChild(script);
+      })();
+    </script>
+
+    <main id="hero-placements">
+      <!-- B. HERO SECTION -->
+      <section class="placement-hero-section">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="grid items-center gap-12 lg:grid-cols-12">
+            
+            <!-- Hero Left Content -->
+            <div class="lg:col-span-7">
+              <span class="placement-badge">
+                <span class="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                PLACEMENTS &amp; CAREER CELL 2026
+              </span>
+
+              <h1 class="mt-6 font-display text-4xl font-800 leading-[1.12] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                Your Skills. Your Projects.<br />
+                <span class="placement-gradient-text">Your Next Opportunity.</span>
+              </h1>
+
+              <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+                Bridge the gap between practical technology learning and high-paying tech roles. With our industry-aligned curriculum, hands-on production capstone projects, and dedicated placement assistance, your career breakthrough begins here.
+              </p>
+
+              <!-- Hero Action Buttons -->
+              <div class="mt-8 flex flex-wrap items-center gap-4">
+                <a href="#roadmap" class="placement-hero-btn magnetic">
+                  Explore Placement Journey <span class="arrow">↓</span>
+                </a>
+                <a href="/contact.html" class="placement-hero-btn-secondary magnetic">
+                  Talk to Placement Advisor
+                </a>
+              </div>
+
+              <!-- Trust Metrics Strip -->
+              <div class="mt-10 flex flex-wrap items-center gap-6 border-t border-indigo-100 pt-6 text-sm text-slate-500">
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-500 font-bold">★★★★★</span>
+                  <span class="font-semibold text-slate-700">4.9/5</span> Graduate Rating
+                </div>
+                <div class="h-4 w-px bg-slate-300 hidden sm:block"></div>
+                <div class="flex items-center gap-2">
+                  <svg class="h-4 w-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>100% Verified Capstones</span>
+                </div>
+                <div class="h-4 w-px bg-slate-300 hidden sm:block"></div>
+                <div class="flex items-center gap-2">
+                  <svg class="h-4 w-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>1:1 Dedicated Mentor</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Right Visual with Student Image & Floating Cards -->
+            <div class="lg:col-span-5">
+              <div class="placement-visual-wrap">
+                <!-- Ambient Glow behind visual -->
+                <div class="placement-ambient-glow" aria-hidden="true"></div>
+
+                <!-- Floating Card 1: Hiring Companies (Top Left) -->
+                <div class="floating-info-card floating-card-1">
+                  <div class="floating-icon-bubble floating-icon-purple">
+                    <span>🏢</span>
+                  </div>
+                  <div>
+                    <div class="floating-title">120+ Hiring Partners</div>
+                    <div class="floating-subtitle">Top MNCs &amp; Scaleups</div>
+                  </div>
+                </div>
+
+                <!-- Main Professional Student Image -->
+                <div class="placement-visual-image-box">
+                  <img
+                    src="/images/placement_student.jpg"
+                    alt="Confident Tech Zentra graduate prepared for tech placements"
+                    class="placement-visual-image"
+                    loading="eager"
+                  />
+                </div>
+
+                <!-- Floating Card 2: Career Support (Right Center) -->
+                <div class="floating-info-card floating-card-2">
+                  <div class="floating-icon-bubble floating-icon-green">
+                    <span>🎯</span>
+                  </div>
+                  <div>
+                    <div class="floating-title">1:1 Career Support</div>
+                    <div class="floating-subtitle">Live Mock Interviews</div>
+                  </div>
+                </div>
+
+                <!-- Floating Card 3: Success Stories (Bottom Left) -->
+                <div class="floating-info-card floating-card-3">
+                  <div class="floating-icon-bubble floating-icon-amber">
+                    <span>⭐</span>
+                  </div>
+                  <div>
+                    <div class="floating-title">93.4% Success Rate</div>
+                    <div class="floating-subtitle">850+ Careers Launched</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- C. HIRING PARTNERS SECTION -->
+      <section class="hiring-partners-section" aria-label="Hiring Partners">
+        <div class="mx-auto max-w-7xl px-6 text-center lg:px-8">
+          <p class="font-display text-xs font-700 tracking-wider text-indigo-900 uppercase">
+            Hiring Network &amp; Alumni Placed Ecosystem
+          </p>
+          <h2 class="mt-2 font-display text-2xl font-700 text-slate-800 sm:text-3xl">
+            Where Our Alumni Build the Future
+          </h2>
+          <p class="mt-2 text-sm text-slate-500 max-w-2xl mx-auto">
+            Our graduates demonstrate the production engineering standards expected by premier cloud platforms, enterprise tech companies, and product startups.
+          </p>
+
+          <!-- Horizontal Company / Hiring Domain Cards -->
+          <div class="partner-logo-grid">
+            <div class="partner-logo-card">
+              <span class="partner-logo-icon">☁️</span>
+              <span class="partner-logo-text">AWS Cloud Ecosystem</span>
+            </div>
+            <div class="partner-logo-card">
+              <span class="partner-logo-icon">⚡</span>
+              <span class="partner-logo-text">Azure Enterprise</span>
+            </div>
+            <div class="partner-logo-card">
+              <span class="partner-logo-icon">🌐</span>
+              <span class="partner-logo-text">Google Cloud Network</span>
+            </div>
+            <div class="partner-logo-card">
+              <span class="partner-logo-icon">🚀</span>
+              <span class="partner-logo-text">Product Startups</span>
+            </div>
+            <div class="partner-logo-card">
+              <span class="partner-logo-icon">🛡️</span>
+              <span class="partner-logo-text">FinTech Innovations</span>
+            </div>
+            <div class="partner-logo-card">
+              <span class="partner-logo-icon">💻</span>
+              <span class="partner-logo-text">Global IT Services</span>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs text-slate-400">
+            *Logos and sector representations reflect domains where Tech Zentra learners interview, contribute open-source solutions, and receive placement offers.
+          </p>
+        </div>
+      </section>
+
+      <!-- D. PLACEMENT STATISTICS SECTION -->
+      <section class="placement-stats-section" aria-label="Placement Statistics">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <span class="placement-badge">PROVEN TRACK RECORD</span>
+            <h2 class="mt-4 font-display text-3xl font-800 text-slate-900 sm:text-4xl md:text-5xl">
+              Placement Numbers That Speak For Themselves
+            </h2>
+            <p class="mt-4 text-base text-slate-600">
+              Verified career outcomes built on hands-on technical rigor, capstone reviews, and intensive placement assistance.
+            </p>
+          </div>
+
+          <!-- 4 Statistic Cards (Editable Placeholders Clearly Structured) -->
+          <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            
+            <!-- Stat Card 1: Eligible Students -->
+            <div class="placement-stat-card">
+              <div class="stat-icon-wrapper">
+                <span>🎓</span>
+              </div>
+              <div class="placement-stat-number stat-number" data-target="1200" data-suffix="+">1,200+</div>
+              <h3 class="placement-stat-title">Eligible Students</h3>
+              <p class="placement-stat-desc">
+                Learners trained, evaluated, and certified job-ready across Cloud, DevOps, Full Stack &amp; Data disciplines.
+              </p>
+              <span class="stat-placeholder-tag">Cohort Benchmark</span>
+            </div>
+
+            <!-- Stat Card 2: Placement Rate -->
+            <div class="placement-stat-card">
+              <div class="stat-icon-wrapper" style="background: #dcfce7; color: #15803d;">
+                <span>📈</span>
+              </div>
+              <div class="placement-stat-number stat-number" data-target="93" data-suffix=".4%" style="background: linear-gradient(135deg, #15803d, #059669); -webkit-background-clip: text;">93.4%</div>
+              <h3 class="placement-stat-title">Placement Rate</h3>
+              <p class="placement-stat-desc">
+                Of active job-seeking graduates placed into technical roles within 180 days of course completion.
+              </p>
+              <span class="stat-placeholder-tag">Success Metric</span>
+            </div>
+
+            <!-- Stat Card 3: Highest Package -->
+            <div class="placement-stat-card">
+              <div class="stat-icon-wrapper" style="background: #fef3c7; color: #b45309;">
+                <span>🏆</span>
+              </div>
+              <div class="placement-stat-number" style="background: linear-gradient(135deg, #b45309, #d97706); -webkit-background-clip: text;">24 LPA</div>
+              <h3 class="placement-stat-title">Highest Package</h3>
+              <p class="placement-stat-desc">
+                Top CTC secured for specialized Cloud Architect &amp; Advanced DevOps roles in leading tech enterprises.
+              </p>
+              <span class="stat-placeholder-tag">Top Tier Offer</span>
+            </div>
+
+            <!-- Stat Card 4: Average Package -->
+            <div class="placement-stat-card">
+              <div class="stat-icon-wrapper" style="background: #e0e7ff; color: #3730a3;">
+                <span>💼</span>
+              </div>
+              <div class="placement-stat-number" style="background: linear-gradient(135deg, #3730a3, #4f46e5); -webkit-background-clip: text;">7.8 LPA</div>
+              <h3 class="placement-stat-title">Average Package</h3>
+              <p class="placement-stat-desc">
+                Competitive average starting CTC achieved across software engineering cohorts and product startups.
+              </p>
+              <span class="stat-placeholder-tag">Mean Starting CTC</span>
+            </div>
+
+          </div>
+
+          <!-- EDIT NOTE: To update the 4 statistics above, edit data-target and text inside the .placement-stat-number divs. -->
+        </div>
+      </section>
+
+      <!-- E. STUDENT SUCCESS STORIES SECTION -->
+      <section class="placement-testimonials-section" aria-label="Student Success Stories">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <span class="placement-badge">ALUMNI VOICES</span>
+            <h2 class="mt-4 font-display text-3xl font-800 text-slate-900 sm:text-4xl md:text-5xl">
+              Real Learners. Real Careers.
+            </h2>
+            <p class="mt-4 text-base text-slate-600">
+              Discover how Tech Zentra students transformed from beginners into placed engineers through our hands-on curriculum and placement mentorship.
+            </p>
+
+            <!-- Testimonial Filter Buttons -->
+            <div class="mt-8 flex flex-wrap justify-center gap-2">
+              <button class="career-btn testimonial-filter-btn active" data-filter="all">All Stories</button>
+              <button class="career-btn testimonial-filter-btn" data-filter="cloud">Cloud &amp; DevOps</button>
+              <button class="career-btn testimonial-filter-btn" data-filter="fullstack">Full Stack Dev</button>
+              <button class="career-btn testimonial-filter-btn" data-filter="data">Data Science</button>
+            </div>
+          </div>
+
+          <!-- Modern Testimonial Cards Grid -->
+          <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            
+            <!-- Story 1: Rahul Sharma -->
+            <div class="placement-testimonial-card" data-category="cloud">
+              <div>
+                <div class="testimonial-header-wrap">
+                  <img
+                    src="/images/student_rahul.jpg"
+                    alt="Rahul Sharma"
+                    class="testimonial-student-img"
+                  />
+                  <div>
+                    <h3 class="testimonial-student-name">Rahul Sharma</h3>
+                    <p class="testimonial-student-role">Cloud &amp; DevOps Engineer</p>
+                    <p class="testimonial-student-company">CloudScale Technologies</p>
+                    <span class="testimonial-ctc-badge">⭐ 14.5 LPA CTC</span>
+                  </div>
+                </div>
+
+                <p class="testimonial-quote">
+                  "Tech Zentra's hands-on AWS labs and real-world CI/CD pipeline projects gave me the exact skills interviewers were testing for. The mock interview sessions completely removed my interview anxiety."
+                </p>
+              </div>
+
+              <div class="testimonial-footer-wrap">
+                <span class="font-semibold text-indigo-700">AWS &amp; DevOps Track</span>
+                <span class="inline-flex items-center gap-1 text-emerald-600 font-medium">
+                  ✓ Verified Placement
+                </span>
+              </div>
+            </div>
+
+            <!-- Story 2: Priya Patel -->
+            <div class="placement-testimonial-card" data-category="fullstack">
+              <div>
+                <div class="testimonial-header-wrap">
+                  <img
+                    src="/images/student_priya.jpg"
+                    alt="Priya Patel"
+                    class="testimonial-student-img"
+                  />
+                  <div>
+                    <h3 class="testimonial-student-name">Priya Patel</h3>
+                    <p class="testimonial-student-role">Full Stack Python Developer</p>
+                    <p class="testimonial-student-company">Enterprise Solutions</p>
+                    <span class="testimonial-ctc-badge">⭐ 11.2 LPA CTC</span>
+                  </div>
+                </div>
+
+                <p class="testimonial-quote">
+                  "From building microservices with Django and React to resume reviews, Tech Zentra supported me at every step. I transitioned from a non-CS background directly to my dream tech role!"
+                </p>
+              </div>
+
+              <div class="testimonial-footer-wrap">
+                <span class="font-semibold text-indigo-700">Full Stack Python Track</span>
+                <span class="inline-flex items-center gap-1 text-emerald-600 font-medium">
+                  ✓ Verified Placement
+                </span>
+              </div>
+            </div>
+
+            <!-- Story 3: Aditya Verma -->
+            <div class="placement-testimonial-card" data-category="data">
+              <div>
+                <div class="testimonial-header-wrap">
+                  <div class="testimonial-student-img flex items-center justify-center bg-indigo-100 font-bold font-display text-indigo-700 text-xl">
+                    AV
+                  </div>
+                  <div>
+                    <h3 class="testimonial-student-name">Aditya Verma</h3>
+                    <p class="testimonial-student-role">Data Science Associate</p>
+                    <p class="testimonial-student-company">FinTech Analytics</p>
+                    <span class="testimonial-ctc-badge">⭐ 12.0 LPA CTC</span>
+                  </div>
+                </div>
+
+                <p class="testimonial-quote">
+                  "The live capstone projects and mentor guidance helped me crack technical rounds with confidence. The placement team actively lined up interviews for our cohort with top analytics firms."
+                </p>
+              </div>
+
+              <div class="testimonial-footer-wrap">
+                <span class="font-semibold text-indigo-700">Data Science &amp; AI Track</span>
+                <span class="inline-flex items-center gap-1 text-emerald-600 font-medium">
+                  ✓ Verified Placement
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- EDIT NOTE: More student testimonial cards can be added using the template above. -->
+        </div>
+      </section>
+
+      <!-- F. PLACEMENT SUPPORT SECTION (6 CARDS) -->
+      <section id="support" class="placement-support-section" aria-label="Placement Support Services">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <span class="placement-badge">360° CAREER ASSISTANCE</span>
+            <h2 class="mt-4 font-display text-3xl font-800 text-slate-900 sm:text-4xl md:text-5xl">
+              Dedicated Placement Support
+            </h2>
+            <p class="mt-4 text-base text-slate-600">
+              We don't just teach code—we equip you with the complete career toolkit to clear high-bar technical interviews and secure standout offers.
+            </p>
+          </div>
+
+          <!-- 6 Support Feature Cards Grid -->
+          <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            
+            <!-- Card 1: Resume Building and Review -->
+            <div class="support-card">
+              <div class="support-icon-box">
+                <span>📄</span>
+              </div>
+              <h3 class="support-card-title">Resume Building &amp; Review</h3>
+              <p class="support-card-desc">
+                Transform your technical experience into an ATS-friendly, high-impact resume. Receive line-by-line feedback from hiring managers and tech recruiters.
+              </p>
+              <div class="support-card-pills">
+                <span class="support-pill">ATS Score &gt; 85</span>
+                <span class="support-pill">1:1 HR Review</span>
+                <span class="support-pill">Impact Metrics</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Mock Interviews -->
+            <div class="support-card">
+              <div class="support-icon-box" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #15803d;">
+                <span>🎙️</span>
+              </div>
+              <h3 class="support-card-title">Mock Interviews</h3>
+              <p class="support-card-desc">
+                Simulated 1:1 technical, system design, and HR rounds conducted by experienced tech leads under real interview conditions with detailed scoring rubrics.
+              </p>
+              <div class="support-card-pills">
+                <span class="support-pill">Live Coding Sandbox</span>
+                <span class="support-pill">Rubric Feedback</span>
+                <span class="support-pill">Behavioral Prep</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Technical Interview Preparation -->
+            <div class="support-card">
+              <div class="support-icon-box" style="background: linear-gradient(135deg, #fef3c7, #fde68a); color: #b45309;">
+                <span>💻</span>
+              </div>
+              <h3 class="support-card-title">Technical Interview Prep</h3>
+              <p class="support-card-desc">
+                Master Data Structures, Algorithms, System Architecture, SQL optimization, and domain-specific questions for Cloud, DevOps, and Full Stack positions.
+              </p>
+              <div class="support-card-pills">
+                <span class="support-pill">DSA Drills</span>
+                <span class="support-pill">System Architecture</span>
+                <span class="support-pill">Live Whiteboarding</span>
+              </div>
+            </div>
+
+            <!-- Card 4: Job Alerts and Opportunities -->
+            <div class="support-card">
+              <div class="support-icon-box" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #4338ca;">
+                <span>🔔</span>
+              </div>
+              <h3 class="support-card-title">Job Alerts &amp; Opportunities</h3>
+              <p class="support-card-desc">
+                Direct hiring pipelines, off-campus referrals, and exclusive placement drives curated directly with our network of hiring managers and partner recruiters.
+              </p>
+              <div class="support-card-pills">
+                <span class="support-pill">Partner Job Board</span>
+                <span class="support-pill">Direct Referrals</span>
+                <span class="support-pill">Weekly Openings</span>
+              </div>
+            </div>
+
+            <!-- Card 5: Career Mentoring -->
+            <div class="support-card">
+              <div class="support-icon-box" style="background: linear-gradient(135deg, #fce7f3, #fbcfe8); color: #be185d;">
+                <span>🧭</span>
+              </div>
+              <h3 class="support-card-title">Career Mentoring</h3>
+              <p class="support-card-desc">
+                Personalized 1:1 guidance from engineering veterans to navigate salary negotiation, profile positioning, role selection, and long-term tech trajectories.
+              </p>
+              <div class="support-card-pills">
+                <span class="support-pill">1:1 Roadmapping</span>
+                <span class="support-pill">Offer Negotiation</span>
+                <span class="support-pill">Lifelong Network</span>
+              </div>
+            </div>
+
+            <!-- Card 6: Portfolio Guidance -->
+            <div class="support-card">
+              <div class="support-icon-box" style="background: linear-gradient(135deg, #ccfbf1, #99f6e4); color: #0f766e;">
+                <span>🌐</span>
+              </div>
+              <h3 class="support-card-title">Portfolio Guidance</h3>
+              <p class="support-card-desc">
+                Build standout GitHub repositories and live-deployed web portfolios showcasing functional architectures, clean codebases, and comprehensive README documentation.
+              </p>
+              <div class="support-card-pills">
+                <span class="support-pill">Live Deployments</span>
+                <span class="support-pill">GitHub Polish</span>
+                <span class="support-pill">Architecture Diagrams</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- G. JOB-READINESS ROADMAP SECTION (5 CONNECTED STEPS) -->
+      <section id="roadmap" class="placement-roadmap-section" aria-label="Job Readiness Roadmap">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto">
+            <span class="placement-badge">STEP-BY-STEP BLUEPRINT</span>
+            <h2 class="mt-4 font-display text-3xl font-800 text-slate-900 sm:text-4xl md:text-5xl">
+              Job-Readiness Roadmap
+            </h2>
+            <p class="mt-4 text-base text-slate-600">
+              Our structured 5-phase career journey ensures you transition seamlessly from foundational learning to landing your offer letter.
+            </p>
+          </div>
+
+          <!-- 5 Connected Steps Pipeline -->
+          <div class="roadmap-pipeline-wrap">
+            <div class="roadmap-steps-row">
+              
+              <!-- Step 1: Learn Fundamentals -->
+              <div class="placement-step active-focus" data-step="1">
+                <div class="step-number-pill">01</div>
+                <h3 class="step-title">Learn Fundamentals</h3>
+                <p class="step-desc">
+                  Master core computer science, programming syntax, cloud basics, and clean coding best practices through structured hands-on modules.
+                </p>
+                <span class="step-time-tag">Weeks 1 – 6</span>
+              </div>
+
+              <!-- Step 2: Build Projects -->
+              <div class="placement-step" data-step="2">
+                <div class="step-number-pill">02</div>
+                <h3 class="step-title">Build Projects</h3>
+                <p class="step-desc">
+                  Develop 3+ production-grade capstone applications featuring microservices, CI/CD pipelines, APIs, and real cloud databases.
+                </p>
+                <span class="step-time-tag">Weeks 7 – 14</span>
+              </div>
+
+              <!-- Step 3: Create a Portfolio -->
+              <div class="placement-step" data-step="3">
+                <div class="step-number-pill">03</div>
+                <h3 class="step-title">Create a Portfolio</h3>
+                <p class="step-desc">
+                  Deploy live applications to production cloud environments, curate standout GitHub repositories, and construct an ATS-optimized resume.
+                </p>
+                <span class="step-time-tag">Weeks 15 – 18</span>
+              </div>
+
+              <!-- Step 4: Prepare for Interviews -->
+              <div class="placement-step" data-step="4">
+                <div class="step-number-pill">04</div>
+                <h3 class="step-title">Prepare for Interviews</h3>
+                <p class="step-desc">
+                  Undergo rigorous mock technical interviews, DSA problem-solving drills, live whiteboarding sessions, and HR behavioral training.
+                </p>
+                <span class="step-time-tag">Weeks 19 – 22</span>
+              </div>
+
+              <!-- Step 5: Apply for Jobs -->
+              <div class="placement-step" data-step="5">
+                <div class="step-number-pill" style="background: linear-gradient(135deg, #10b981, #059669);">05</div>
+                <h3 class="step-title">Apply for Jobs</h3>
+                <p class="step-desc">
+                  Access direct partner hiring drives, company referrals, fast-tracked recruiter shortlists, and 1:1 offer negotiation support.
+                </p>
+                <span class="step-time-tag" style="color: #059669;">Weeks 23+ (Until Hired)</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mt-10 text-center">
+            <p class="text-sm text-slate-500">
+              Hover or click on any roadmap stage to review milestone expectations and deliverables.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- H. BOTTOM CTA SECTION -->
+      <section class="placement-cta-section" aria-label="Placement Call to Action">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="placement-cta-box">
+            <span class="placement-badge" style="background: rgba(255, 255, 255, 0.15); color: #ffffff; border-color: rgba(255, 255, 255, 0.3);">
+              START YOUR CAREER TRANSFORMATION
+            </span>
+
+            <h2 class="mt-6 font-display text-3xl font-800 text-white sm:text-4xl md:text-5xl">
+              Ready to Start Your Placement Journey?
+            </h2>
+
+            <p class="mt-5 text-lg leading-relaxed text-indigo-100 max-w-2xl mx-auto">
+              Join hundreds of successful graduates who transitioned into rewarding software and cloud engineering roles with Tech Zentra's structured mentorship and placement assistance.
+            </p>
+
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <a href="/pages/course-details/programs.html" class="placement-cta-btn magnetic">
+                Explore Programs <span class="arrow">→</span>
+              </a>
+              <a href="/contact.html" class="placement-hero-btn-secondary magnetic" style="background: transparent; color: #ffffff !important; border-color: rgba(255, 255, 255, 0.4);">
+                Book a Free Career Session
+              </a>
+            </div>
+
+            <p class="mt-8 text-xs text-indigo-200">
+              *Next training cohort begins soon. Limited seats available for personalized mentorship.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+          <div class="lg:col-span-2">
+            <a href="/index.html" class="flex items-center gap-2" aria-label="Tech Zentra home">
+              <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+                  <path d="M16 2L29 9.5V22.5L16 30L3 22.5V9.5L16 2Z" stroke="url(#zg-foot)" stroke-width="1.6" />
+                  <path d="M11 12L16 22L21 12" stroke="url(#zg-foot)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <defs>
+                    <linearGradient id="zg-foot" x1="3" y1="2" x2="29" y2="30">
+                      <stop stop-color="#6C63FF" />
+                      <stop offset="1" stop-color="#00D9FF" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <span class="font-display text-lg font-700 tracking-tight text-ink-primary">TECH<span class="text-accent-secondary">ZENTRA</span></span>
+            </a>
+            <p class="mt-4 max-w-xs text-ink-secondary">Learn Technology. Build Reality.</p>
+            <p class="mt-2 max-w-xs text-sm text-ink-secondary">Master the technologies powering modern careers.</p>
+          </div>
+          <div>
+            <h3 class="footer-heading">Programs</h3>
+            <ul class="mt-4 space-y-2">
+              <li><a href="/pages/course-details/programs.html" class="footer-link">AWS &amp; Cloud</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">DevOps</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Full Stack Python</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Full Stack Java</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Data Science</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Cyber Security</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">AI / ML</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Company</h3>
+            <ul class="mt-4 space-y-2">
+              <li><a href="/pages/course-details/about.html" class="footer-link">About</a></li>
+              <li><a href="/pages/placements/index.html" class="footer-link">Placements</a></li>
+              <li><a href="/pages/course-details/about.html" class="footer-link">Trainers</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Projects</a></li>
+              <li><a href="/pages/internships/index.html" class="footer-link">Careers</a></li>
+              <li><a href="/contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Resources</h3>
+            <ul class="mt-4 space-y-2">
+              <li><a href="/pages/placements/index.html" class="footer-link">Placement Cell</a></li>
+              <li><a href="/pages/internships/index.html" class="footer-link">Roadmaps</a></li>
+              <li><a href="/pages/course-details/about.html" class="footer-link">Free Resources</a></li>
+              <li><a href="/contact.html" class="footer-link">FAQs</a></li>
+            </ul>
+            <h3 class="footer-heading mt-6">Social</h3>
+            <div class="mt-4 flex gap-3">
+              <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+              <a href="#" class="social-link" aria-label="Instagram">ig</a>
+              <a href="#" class="social-link" aria-label="YouTube">yt</a>
+              <a href="#" class="social-link" aria-label="GitHub">gh</a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-white/10 pt-6 text-center text-sm text-ink-secondary">
+          © 2026 Tech Zentra. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/script.js"></script>
+    <script src="../../js/site-footer.js" defer></script>
+</body>
+</html>

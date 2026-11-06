@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programs | Tech Zentra</title>
+    <meta name="description" content="Explore Tech Zentra's industry-focused programs: AWS & Cloud Computing, DevOps, Full Stack Python, Java, Data Science, Cyber Security, AI/ML, and Software Development." />
+    <meta name="theme-color" content="#050816" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Programs | Tech Zentra" />
+    <meta property="og:description" content="Master the technologies that power the industry through hands-on, career-focused programs." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <!-- <script>s -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../../css/home.css" />
+    <link rel="stylesheet" href="../../css/site-footer.css">
+</head>
+  <body class="page-programs">
+    <div id="cursor-glow" aria-hidden="true"></div>
+    <a href="#page-programs" class="skip-link">Skip to content</a>
+
+    <header class="site-header" id="site-header" aria-label="Main navigation"></header>
+    <script>
+      (function () {
+        var header = document.getElementById('site-header');
+        if (!header || header.querySelector('.nav-links')) return;
+
+        header.innerHTML = `
+          <div class="container nav">
+            <a class="brand" href="/index.html" aria-label="Tech Zentra home">
+              <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+              <span class="brand-word">TECH<span>ZENTRA</span></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Primary">
+              <a href="/index.html" class="is-active">Home</a>
+              <a href="/pages/course-details/index.html#home">Courses</a>
+              <a href="/pages/internships/index.html">Internships</a>
+              <a href="/pages/placements/index.html">Placements</a>
+              <a href="/pages/testimonials/index.html">Success</a>
+              <a href="/contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+              <a href="/contact.html" class="btn btn-primary btn-sm nav-cta">Start Learning <span class="arrow">→</span></a>
+              <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+              >
+                <span></span><span></span><span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+              <a href="/index.html" aria-current="page">Home</a>
+              <a href="/pages/course-details/index.html#home">Courses</a>
+              <a href="/pages/internships/index.html">Internships</a>
+              <a href="/pages/placements/index.html">Placements</a>
+              <a href="/pages/testimonials/index.html">Success</a>
+              <a href="/contact.html">Contact</a>
+              <a href="/contact.html" class="btn btn-primary">Start Learning <span class="arrow">→</span></a>
+            </nav>
+          </div>
+        `;
+
+        var script = document.createElement('script');
+        script.src = '../../js/home.js';
+        script.defer = true;
+        document.body.appendChild(script);
+      })();
+    </script>
+
+    <main id="page-programs">
+      <!-- PAGE HEADER -->
+      <section class="section pb-0">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="reveal-up">
+            <span class="badge">OUR PROGRAMS</span>
+            <h1 class="mt-6 font-display text-4xl font-700 leading-tight text-ink-primary sm:text-5xl md:text-6xl">
+              MASTER THE TECHNOLOGIES<br /><span class="gradient-text">THAT POWER THE INDUSTRY.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-lg text-ink-secondary">Eight career-focused programs designed around hands-on projects, real cloud labs, and industry-standard tools.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALL PROGRAMS -->
+      <section class="section">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" id="programs-grid"></div>
+        </div>
+      </section>
+
+      <!-- PROJECT SHOWCASE -->
+      <section id="projects" class="section">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="reveal-up max-w-3xl">
+            <h2 class="font-display text-3xl font-700 leading-tight text-ink-primary sm:text-4xl md:text-5xl">
+              FROM THEORY<br /><span class="gradient-text">TO PRODUCTION.</span>
+            </h2>
+            <p class="mt-4 text-lg text-ink-secondary">Real-world projects you'll build throughout the programs.</p>
+          </div>
+          <div class="mt-12 flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory" id="projects-scroll"></div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section relative overflow-hidden">
+        <div class="cta-bg" aria-hidden="true"><canvas id="cta-canvas"></canvas></div>
+        <div class="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
+          <div class="reveal-up">
+            <h2 class="font-display text-4xl font-700 leading-tight text-ink-primary md:text-5xl">READY TO <span class="gradient-text">START BUILDING?</span></h2>
+            <p class="mx-auto mt-6 max-w-xl text-lg text-ink-secondary">Talk to our team and find the program that fits your goals.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+              <a href="/contact.html" class="btn-primary magnetic">Talk to Tech Zentra <span class="arrow">→</span></a>
+              <a href="/pages/internships/index.html" class="btn-secondary magnetic">Explore Career Paths</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+          <div class="lg:col-span-2">
+            <a href="/index.html" class="flex items-center gap-2" aria-label="Tech Zentra home">
+              <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+                  <path d="M16 2L29 9.5V22.5L16 30L3 22.5V9.5L16 2Z" stroke="url(#zg2)" stroke-width="1.6" />
+                  <path d="M11 12L16 22L21 12" stroke="url(#zg2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <defs><linearGradient id="zg2" x1="3" y1="2" x2="29" y2="30"><stop stop-color="#6C63FF" /><stop offset="1" stop-color="#00D9FF" /></linearGradient></defs>
+                </svg>
+              </span>
+              <span class="font-display text-lg font-700 tracking-tight text-ink-primary">TECH<span class="text-accent-secondary">ZENTRA</span></span>
+            </a>
+            <p class="mt-4 max-w-xs text-ink-secondary">Learn Technology. Build Reality.</p>
+            <p class="mt-2 max-w-xs text-sm text-ink-secondary">Master the technologies powering modern careers.</p>
+          </div>
+          <div>
+            <h3 class="footer-heading">Programs</h3>
+            <ul class="mt-4 space-y-2">
+              <li><a href="/pages/course-details/programs.html" class="footer-link">AWS &amp; Cloud</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">DevOps</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Full Stack Python</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Full Stack Java</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Data Science</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Cyber Security</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">AI / ML</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Company</h3>
+            <ul class="mt-4 space-y-2">
+              <li><a href="/pages/course-details/about.html" class="footer-link">About</a></li>
+              <li><a href="/pages/placements/index.html" class="footer-link">Placements</a></li>
+              <li><a href="/pages/course-details/about.html" class="footer-link">Trainers</a></li>
+              <li><a href="/pages/course-details/programs.html" class="footer-link">Projects</a></li>
+              <li><a href="/pages/internships/index.html" class="footer-link">Careers</a></li>
+              <li><a href="/contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Resources</h3>
+            <ul class="mt-4 space-y-2">
+              <li><a href="/pages/course-details/about.html" class="footer-link">Blog</a></li>
+              <li><a href="/pages/internships/index.html" class="footer-link">Roadmaps</a></li>
+              <li><a href="/pages/course-details/about.html" class="footer-link">Free Resources</a></li>
+              <li><a href="/contact.html" class="footer-link">FAQs</a></li>
+            </ul>
+            <h3 class="footer-heading mt-6">Social</h3>
+            <div class="mt-4 flex gap-3">
+              <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+              <a href="#" class="social-link" aria-label="Instagram">ig</a>
+              <a href="#" class="social-link" aria-label="YouTube">yt</a>
+              <a href="#" class="social-link" aria-label="GitHub">gh</a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-white/10 pt-6 text-center text-sm text-ink-secondary">© 2026 Tech Zentra. All Rights Reserved.</div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/script.js"></script>
+    <script src="../../js/site-footer.js" defer></script>
+</body>
+</html>

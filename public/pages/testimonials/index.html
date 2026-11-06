@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TechZentra student career journeys and technology projects.">
+  <title>TechZentra | Student Success</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #242722;
+      --ink-soft: #73766f;
+      --paper: #f7f5ef;
+      --cream: #f0ede4;
+      --card: #fffefa;
+      --line: #d8d3c8;
+      --muted-surface: #f0ede4;
+      --lime: #55745f;
+      --orange: #b87558;
+      --serif: "Manrope", sans-serif;
+      --sans: "Inter", sans-serif;
+      --mono: "IBM Plex Mono", monospace;
+      --shadow: 0 24px 70px rgba(36, 39, 34, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: var(--ink-soft); font-size: 11px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; background: var(--orange); border-radius: 50%; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: var(--serif); letter-spacing: -.055em; line-height: .98; }
+    h1 { font-size: clamp(52px, 7.2vw, 94px); max-width: 760px; }
+    h2 { font-size: clamp(40px, 5vw, 68px); }
+    h3 { font-size: 27px; }
+    .muted { color: var(--ink-soft); }
+
+    header {
+      height: 82px; display: flex; align-items: center;
+      border-bottom: 1px solid var(--line); background: rgba(248,243,236,.88);
+      backdrop-filter: blur(14px); position: sticky; top: 0; z-index: 3;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 10px; font: 700 17px var(--serif); letter-spacing: -.04em; }
+    .brand-mark { width: 32px; height: 32px; background: var(--ink); color: var(--lime); display: grid; place-items: center; border-radius: 50%; font-size: 14px; }
+    nav { display: flex; align-items: center; gap: 26px; color: var(--ink-soft); font-size: 12px; font-weight: 600; }
+    nav a { position: relative; padding: 8px 0; }
+    nav a:not(.nav-cta)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 1px; height: 1px; background: var(--orange); transition: right .25s ease; }
+    nav a:not(.nav-cta):hover::after, nav a[aria-current="page"]::after { right: 0; }
+    nav a:hover { color: var(--ink); }
+    .nav-cta { padding: 12px 18px; color: var(--paper); background: var(--ink); border-radius: 999px; box-shadow: 0 7px 18px rgba(58,16,29,.14); }
+
+    .hero { padding: 100px 0 124px; overflow: hidden; background: radial-gradient(circle at 75% 16%, rgba(165,80,88,.08), transparent 28%); }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 60px; align-items: end; }
+    .hero-copy { padding-bottom: 18px; }
+    .hero h1 { margin: 22px 0 28px; max-width: 700px; }
+    .hero h1 em { color: var(--orange); font-style: italic; font-weight: 500; }
+    .hero-description { max-width: 470px; font-size: 17px; color: var(--ink-soft); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 35px; }
+    .button { border: 1px solid var(--ink); border-radius: 999px; padding: 14px 21px; display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; transition: transform .2s, background .2s; cursor: pointer; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--ink); color: var(--paper); box-shadow: 0 10px 24px rgba(58,16,29,.16); }
+    .button-secondary { background: transparent; }
+    .button-secondary span { width: 23px; height: 23px; display: grid; place-items: center; border-radius: 50%; background: var(--lime); color: var(--ink); font-size: 11px; }
+    .hero-media { position: relative; min-height: 455px; }
+    .hero-photo { height: 455px; width: 100%; object-fit: cover; border-radius: 4px 110px 4px 4px; display: block; filter: saturate(.68) sepia(.08); box-shadow: 0 24px 45px rgba(58,16,29,.18); transition: transform .5s ease, filter .5s ease; }
+    .hero-media:hover .hero-photo { transform: scale(1.015); filter: saturate(.8) sepia(.08); }
+    .hero-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 12px; padding: 8px 17px 8px 8px; border: 1px solid rgba(248,243,236,.65); border-radius: 999px; background: rgba(58,16,29,.7); color: var(--paper); cursor: pointer; backdrop-filter: blur(7px); transition: background .25s, transform .25s; }
+    .hero-play span { width: 43px; height: 43px; display: grid; place-items: center; padding-left: 2px; border-radius: 50%; background: var(--lime); color: var(--ink); font-size: 13px; }
+    .hero-play small { font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+    .hero-play:hover { background: var(--ink); transform: translate(-50%, -50%) scale(1.04); }
+    .floating-card { position: absolute; left: -38px; bottom: 30px; width: 250px; padding: 21px; background: var(--card); box-shadow: var(--shadow); border-radius: 3px; border-top: 3px solid var(--lime); }
+    .floating-card small { color: var(--orange); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .floating-card p { margin-top: 10px; font: 500 18px/1.15 var(--serif); }
+    .floating-card .card-meta { margin-top: 15px; color: var(--ink-soft); font-size: 12px; }
+
+    .proof { padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .proof-item { padding: 12px 28px; border-left: 1px solid var(--line); }
+    .proof-item:first-child { padding-left: 0; border: 0; }
+    .proof-number { display: block; font: 600 38px var(--serif); letter-spacing: -.05em; }
+    .proof-label { display: block; color: var(--ink-soft); font-size: 12px; margin-top: 2px; }
+    .proof-note { color: #78827d; font-size: 10px; margin-top: 7px; }
+    .company-strip { padding: 38px 0; background: var(--cream); border-bottom: 1px solid var(--line); }
+    .company-strip-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 24px; }
+    .company-strip-head p { max-width: 310px; color: var(--ink-soft); font-size: 11px; }
+    .company-list { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+    .company-slot { min-height: 82px; display: flex; flex-direction: column; justify-content: center; padding: 12px; border: 1px solid rgba(58,16,29,.13); background: rgba(248,243,236,.58); }
+    .company-logo { color: var(--ink); font: 700 20px var(--serif); letter-spacing: -.08em; }
+    .company-name { margin-top: 6px; color: var(--ink-soft); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .company-state { margin-top: 3px; color: #977c7d; font-size: 9px; }
+
+    section { padding: 125px 0; }
+    .section-heading { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 48px; }
+    .section-heading h2 { max-width: 680px; }
+    .section-heading p { max-width: 290px; color: var(--ink-soft); font-size: 15px; }
+    .feature { background: var(--ink); color: var(--paper); padding: 0; }
+    .feature-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 650px; }
+    .feature-photo { width: 100%; height: 100%; min-height: 650px; object-fit: cover; filter: saturate(.58) sepia(.12); }
+    .feature-content { padding: 78px 12% 65px; display: flex; flex-direction: column; justify-content: center; }
+    .feature-content .eyebrow { color: #c8d4c8; }
+    .feature-content h2 { margin: 20px 0 27px; color: var(--paper); }
+    .feature-content h2 span { color: var(--lime); }
+    .feature-intro { color: #c8d4c8; max-width: 440px; font-size: 16px; }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; border-top: 1px solid rgba(255,255,255,.2); margin-top: 43px; padding-top: 26px; }
+    .detail label { display: block; color: #93aca5; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 5px; }
+    .detail strong { font-size: 14px; font-weight: 500; }
+    .company-lockup { display: flex; align-items: center; gap: 13px; margin-top: 24px; padding: 13px 15px; border: 1px solid rgba(255,255,255,.2); max-width: 315px; }
+    .company-lockup .company-logo { color: var(--lime); }
+    .company-lockup small { display: block; color: #c8d4c8; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+    .company-lockup strong { display: block; margin-top: 2px; font-size: 13px; font-weight: 500; }
+    .quote { border-left: 2px solid var(--orange); padding-left: 17px; margin-top: 38px; font: 500 19px/1.3 var(--serif); max-width: 440px; }
+    .feature-video { margin-top: 28px; border-color: #9eb4ad; color: var(--paper); align-self: flex-start; }
+    .feature-video span { background: var(--lime); color: var(--ink); }
+
+    .stories { background: var(--cream); }
+    .filter-bar { display: flex; gap: 8px; margin-bottom: 33px; }
+    .filter { border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; background: transparent; color: var(--ink-soft); font-size: 12px; cursor: pointer; }
+    .filter.active, .filter:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .story-card { background: #fbf8f3; padding: 10px 10px 25px; border: 1px solid rgba(58,16,29,.08); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .story-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: rgba(165,80,88,.4); }
+    .story-card[hidden] { display: none; }
+    .story-image { width: 100%; height: 250px; object-fit: cover; display: block; filter: saturate(.62) sepia(.06); transition: filter .3s ease; }
+    .story-card:hover .story-image { filter: saturate(.86) sepia(.03); }
+    .story-body { padding: 23px 12px 0; }
+    .story-tag { color: var(--orange); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .story-body h3 { margin: 9px 0 11px; }
+    .story-body p { color: var(--ink-soft); font-size: 14px; line-height: 1.55; }
+    .story-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); margin-top: 20px; padding-top: 14px; color: var(--ink-soft); font-size: 11px; }
+    .story-footer strong { color: var(--ink); font-weight: 700; }
+    .story-read { border: 0; background: none; padding: 0; color: var(--ink); cursor: pointer; font-size: 11px; font-weight: 700; }
+    .story-read:hover { color: var(--orange); }
+    .content-status { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; color: var(--ink-soft); font-size: 11px; }
+    .content-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); }
+    .filter-bar { flex-wrap: wrap; }
+
+    .voices { background: var(--paper); }
+    .voices-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: start; }
+    .voices-title h2 { margin: 21px 0; }
+    .voices-title p { color: var(--ink-soft); max-width: 300px; }
+    .voice-list { border-top: 1px solid var(--line); }
+    .voice { display: grid; grid-template-columns: 58px 1fr 35px; align-items: center; gap: 18px; padding: 23px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+    .voice-avatar { width: 58px; height: 58px; object-fit: cover; border-radius: 50%; filter: saturate(.7); }
+    .voice blockquote { font: 500 20px/1.2 var(--serif); }
+    .voice cite { display: block; color: var(--ink-soft); font-size: 12px; font-style: normal; margin-top: 7px; }
+    .voice-arrow { font-size: 23px; color: var(--orange); transition: transform .2s; }
+    .voice:hover .voice-arrow { transform: translateX(4px); }
+
+    .projects { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
+    .projects::before { content: "BUILD"; position: absolute; top: 26px; right: -24px; color: rgba(215,236,98,.07); font: 700 180px/.8 var(--serif); letter-spacing: -.12em; pointer-events: none; }
+    .projects .eyebrow { color: #b7c9c0; }
+    .projects-heading { position: relative; z-index: 1; }
+    .projects-heading h2 { max-width: 700px; margin-top: 20px; color: var(--paper); }
+    .projects-heading h2 span { color: var(--lime); }
+    .projects-intro { max-width: 420px; margin-top: 22px; color: #b7c9c0; font-size: 15px; }
+    .project-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 42px 0 28px; position: relative; z-index: 1; }
+    .project-filter { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 9px 16px; background: transparent; color: #b7c9c0; font-size: 12px; cursor: pointer; }
+    .project-filter.active, .project-filter:hover { background: var(--lime); border-color: var(--lime); color: var(--ink); }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; position: relative; z-index: 1; }
+    .project-card { background: #4a1d2b; border: 1px solid rgba(255,255,255,.12); padding: 10px 10px 22px; transition: transform .25s, border-color .25s; }
+    .project-card:hover { transform: translateY(-6px); border-color: var(--lime); }
+    .project-card[hidden] { display: none; }
+    .project-image { display: block; width: 100%; height: 190px; object-fit: cover; filter: saturate(.72); }
+    .project-body { padding: 21px 10px 0; }
+    .project-type { color: var(--lime); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .project-body h3 { color: var(--paper); margin: 9px 0 10px; }
+    .project-body p { color: #b7c9c0; font-size: 13px; line-height: 1.55; }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 17px; }
+    .project-meta span { border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 5px 8px; color: #d3ded7; font-size: 10px; }
+    .project-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.14); margin-top: 20px; padding-top: 14px; color: #b7c9c0; font-size: 11px; }
+    .project-footer a { color: var(--lime); font-weight: 700; }
+    .project-footer a:hover { color: var(--paper); }
+    .projects-note { margin-top: 25px; color: #87a099; font-size: 11px; }
+    .project-bubble { position: fixed; right: 24px; bottom: 24px; z-index: 5; display: inline-flex; align-items: center; gap: 10px; padding: 14px 18px; border: 1px solid var(--ink); border-radius: 999px; background: var(--lime); color: var(--ink); box-shadow: 0 12px 30px rgba(16,42,42,.2); font-size: 12px; font-weight: 700; transition: transform .2s, box-shadow .2s; }
+    .project-bubble::before { content: "✦"; font-size: 15px; }
+    .project-bubble:hover { transform: translateY(-4px); box-shadow: 0 17px 35px rgba(16,42,42,.3); }
+
+    .closing { padding: 105px 0; background: var(--orange); }
+    .closing-inner { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
+    .closing h2 { max-width: 720px; color: var(--ink); }
+    .closing p { max-width: 280px; color: #553b31; font-size: 15px; }
+    .closing .button { margin-top: 28px; }
+    footer { padding: 23px 0; background: var(--ink); color: #adc0b7; font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; }
+
+    .modal { position: fixed; inset: 0; z-index: 10; display: none; place-items: center; padding: 24px; background: rgba(5, 20, 20, .8); }
+    .modal.open { display: grid; }
+    .modal-box { width: min(620px, 100%); background: var(--paper); padding: 38px; position: relative; box-shadow: var(--shadow); }
+    .modal-box h2 { font-size: 40px; margin: 17px 0; }
+    .modal-box p { color: var(--ink-soft); }
+    .modal-close { position: absolute; top: 16px; right: 18px; border: 0; background: none; font-size: 27px; cursor: pointer; color: var(--ink); }
+    .playback { margin-top: 25px; height: 100px; background: var(--ink); color: var(--lime); display: grid; place-items: center; font: 600 14px var(--serif); }
+    .story-modal-box { border-top: 5px solid var(--orange); }
+    .story-modal-box h2 { font-size: 42px; margin: 16px 0 12px; }
+    .story-modal-meta { color: var(--orange); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .story-modal-copy { color: var(--ink-soft); font-size: 16px; }
+    .story-modal-note { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 12px; }
+
+    /* Testimonials and projects redesign */
+    .feature { background: var(--ink); }
+    .feature-layout { max-width: 1280px; margin: 0 auto; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); }
+    .feature-photo { filter: saturate(.72); }
+    .feature-content h2, .projects-heading h2 { font-weight: 700; letter-spacing: -.06em; }
+    .feature-content h2 span, .projects-heading h2 span { color: var(--orange); }
+    .feature-intro, .projects-intro { color: #c9cec7; }
+    .details { border-color: rgba(247,245,239,.22); }
+    .detail label { color: #a7b9aa; font-family: var(--mono); letter-spacing: .04em; }
+    .company-lockup { border-color: rgba(247,245,239,.22); }
+    .company-lockup .company-logo { color: #b7cbb9; font-family: var(--mono); font-size: 14px; letter-spacing: 0; }
+    .quote { border-color: var(--orange); }
+    .feature-video { border-color: #9eb4a3; }
+    .feature-video span { background: var(--orange); color: var(--paper); }
+
+    .stories { background: var(--paper); }
+    .stories .section-heading { align-items: start; }
+    .stories .section-heading h2 { font-weight: 700; }
+    .content-status { color: var(--ink-soft); font-family: var(--mono); font-size: 10px; }
+    .content-status::before { background: var(--orange); }
+    .story-card { background: var(--card); border-color: var(--line); padding: 0 0 24px; }
+    .story-card:hover { border-color: var(--orange); box-shadow: 0 18px 40px rgba(36,39,34,.1); }
+    .story-image { height: 245px; filter: saturate(.72); }
+    .story-body { padding: 24px 24px 0; }
+    .story-tag, .project-type { color: var(--orange); font-family: var(--mono); font-size: 10px; letter-spacing: .04em; }
+    .story-body h3 { font-weight: 700; letter-spacing: -.04em; }
+    .story-body p { color: var(--ink-soft); }
+    .story-footer { border-color: var(--line); }
+    .story-footer strong { font-family: var(--mono); font-size: 10px; font-weight: 500; }
+    .story-read { color: var(--ink); }
+
+    .voices { background: var(--muted-surface, #f0ede4); }
+    .voice { transition: padding .25s ease, background .25s ease; }
+    .voice:hover { padding-left: 12px; padding-right: 12px; background: rgba(255,254,250,.55); }
+    .voice-avatar { border-radius: 2px; filter: saturate(.7); }
+    .voice blockquote { font-family: var(--serif); font-weight: 600; }
+    .voice cite { font-family: var(--mono); font-size: 10px; }
+    .voice-arrow { color: var(--orange); }
+
+    .projects { background: var(--ink); }
+    .projects::before { color: rgba(85,116,95,.18); }
+    .projects .eyebrow { color: #b7cbb9; }
+    .projects-heading h2 span { color: #b7cbb9; }
+    .project-filters { margin-top: 36px; }
+    .project-filter { border-color: rgba(247,245,239,.3); color: #c9cec7; font-family: var(--mono); font-size: 10px; }
+    .project-filter.active, .project-filter:hover { background: var(--orange); border-color: var(--orange); color: var(--paper); }
+    .project-grid { grid-template-columns: 1.35fr 1fr; grid-template-rows: auto auto; gap: 18px; }
+    .project-card { background: var(--lime); border-color: rgba(247,245,239,.16); padding: 0 0 22px; }
+    .project-card:first-child { grid-row: span 2; }
+    .project-card:hover { border-color: var(--orange); transform: translateY(-5px); }
+    .project-image { height: 205px; filter: saturate(.7); transition: transform .35s ease, filter .35s ease; }
+    .project-card:first-child .project-image { height: 320px; }
+    .project-card:hover .project-image { filter: saturate(.95); transform: scale(1.015); }
+    .project-body { padding: 22px 24px 0; }
+    .project-body h3 { font-weight: 700; }
+    .project-body p { color: #c9cec7; }
+    .project-meta span { border-radius: 2px; border-color: rgba(247,245,239,.24); color: #d6ddd4; font-family: var(--mono); font-size: 9px; }
+    .project-footer { border-color: rgba(247,245,239,.16); }
+    .project-footer a { color: #d9b09d; font-family: var(--mono); font-size: 10px; }
+    .projects-note { color: #aeb9ae; font-family: var(--mono); font-size: 10px; }
+
+    @media (max-width: 800px) {
+      .wrap { width: min(100% - 32px, 600px); }
+      nav a:not(.nav-cta) { display: none; }
+      .hero { padding: 65px 0 75px; }
+      .hero-grid, .feature-layout, .voices-layout { grid-template-columns: 1fr; }
+      .hero-media { margin-top: 35px; min-height: 390px; }
+      .hero-photo { height: 390px; }
+      .floating-card { left: 15px; bottom: 18px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; gap: 18px 0; }
+      .proof-item:nth-child(3) { border-left: 0; padding-left: 0; }
+      .proof-item:nth-child(2), .proof-item:nth-child(4) { padding-right: 0; }
+      .company-strip-head { display: block; }
+      .company-strip-head p { margin-top: 12px; }
+      .company-list { grid-template-columns: repeat(3, 1fr); }
+      section { padding: 78px 0; }
+      .section-heading, .closing-inner { display: block; }
+      .section-heading p, .closing p { margin-top: 20px; }
+      .feature-photo { min-height: 390px; height: 390px; }
+      .feature-content { padding: 60px 24px; }
+      .story-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project-card:first-child { grid-row: auto; }
+      .project-card:first-child .project-image { height: 245px; }
+      .projects::before { font-size: 100px; top: 55px; }
+      .project-bubble { right: 14px; bottom: 14px; padding: 12px 15px; }
+      .voices-layout { gap: 45px; }
+      .voice blockquote { font-size: 17px; }
+      .closing h2 { font-size: 48px; }
+    }
+  </style>
+  <link rel="stylesheet" href="../../css/home.css">
+  <link rel="stylesheet" href="../../css/site-footer.css">
+</head>
+<body>
+  <header class="site-header" id="site-header" aria-label="Main navigation"></header>
+  <script>
+    (function () {
+      var header = document.getElementById('site-header');
+      if (!header || header.querySelector('.nav-links')) return;
+
+      header.innerHTML = `
+        <div class="container nav">
+          <a class="brand" href="/index.html" aria-label="Tech Zentra home">
+            <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+            <span class="brand-word">TECH<span>ZENTRA</span></span>
+          </a>
+
+          <nav class="nav-links" aria-label="Primary">
+            <a href="/index.html" class="is-active">Home</a>
+            <a href="/pages/course-details/index.html#home">Courses</a>
+            <a href="/pages/internships/index.html">Internships</a>
+            <a href="/pages/placements/index.html">Placements</a>
+            <a href="/pages/testimonials/index.html">Success</a>
+            <a href="/contact.html">Contact</a>
+          </nav>
+
+          <div class="nav-actions">
+            <a href="/contact.html" class="btn btn-primary btn-sm nav-cta">Start Learning <span class="arrow">→</span></a>
+            <button
+              class="menu-toggle"
+              id="menu-toggle"
+              type="button"
+              aria-label="Open menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+          <nav class="mobile-nav" aria-label="Mobile navigation">
+            <a href="/index.html" aria-current="page">Home</a>
+            <a href="/pages/course-details/index.html#home">Courses</a>
+            <a href="/pages/internships/index.html">Internships</a>
+            <a href="/pages/placements/index.html">Placements</a>
+            <a href="/pages/testimonials/index.html">Success</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/contact.html" class="btn btn-primary">Start Learning <span class="arrow">→</span></a>
+          </nav>
+        </div>
+      `;
+
+      var script = document.createElement('script');
+      script.src = '../../js/home.js';
+      script.defer = true;
+      document.body.appendChild(script);
+    })();
+  </script>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Student success / stories in progress</span>
+          <h1>Real journeys.<br><em>Real potential.</em></h1>
+          <p class="hero-description">See how practical learning, thoughtful mentorship and meaningful work help students prepare for the opportunities ahead.</p>
+          <div class="actions">
+            <a class="button button-primary" href="#stories">Explore student stories <span>↘</span></a>
+            <button class="button button-secondary js-video" type="button" data-student="the student experience"><span>▶</span> Watch experiences</button>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85" alt="Students collaborating around a table">
+          <button class="hero-play js-video" type="button" data-student="the featured student story" aria-label="Watch the featured student success story"><span>▶</span><small>Watch story</small></button>
+          <div class="floating-card">
+            <small>TechZentra story slot</small>
+            <p>“Replace this pull quote with an approved student voice.”</p>
+            <div class="card-meta">Verified student name · Programme / class</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" id="highlights" aria-label="Success highlights">
+      <div class="wrap proof-grid">
+        <div class="proof-item"><span class="proof-number">--</span><span class="proof-label">Students trained</span><span class="proof-note">Add verified statistic</span></div>
+        <div class="proof-item"><span class="proof-number">--</span><span class="proof-label">Career opportunities</span><span class="proof-note">Add verified statistic</span></div>
+        <div class="proof-item"><span class="proof-number">--</span><span class="proof-label">Industry mentors</span><span class="proof-note">Add verified statistic</span></div>
+        <div class="proof-item"><span class="proof-number">--</span><span class="proof-label">Internship experiences</span><span class="proof-note">Add verified statistic</span></div>
+      </div>
+    </section>
+
+    <section class="company-strip" aria-label="Example company destinations">
+      <div class="wrap">
+        <div class="company-strip-head">
+          <div><span class="eyebrow">TechZentra career destinations</span><h3 style="margin-top:10px">Make the next opportunity visible.</h3></div>
+          <p>Illustrative destination slots only. Replace these with approved employer logos after verifying each student outcome.</p>
+        </div>
+        <div class="company-list">
+          <div class="company-slot"><span class="company-logo">G</span><span class="company-name">Google</span><span class="company-state">Example slot</span></div>
+          <div class="company-slot"><span class="company-logo">Microsoft</span><span class="company-name">Microsoft</span><span class="company-state">Example slot</span></div>
+          <div class="company-slot"><span class="company-logo">amazon</span><span class="company-name">Amazon</span><span class="company-state">Example slot</span></div>
+          <div class="company-slot"><span class="company-logo">Adobe</span><span class="company-name">Adobe</span><span class="company-state">Example slot</span></div>
+          <div class="company-slot"><span class="company-logo">zomato</span><span class="company-name">Zomato</span><span class="company-state">Example slot</span></div>
+          <div class="company-slot"><span class="company-logo">ORG</span><span class="company-name">Other technology org</span><span class="company-state">Replace logo</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="featured-story">
+      <div class="feature-layout">
+        <img class="feature-photo" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85" alt="Student presenting an idea to a team">
+        <div class="feature-content">
+          <span class="eyebrow">Featured career story</span>
+          <h2>Stories of <span>momentum.</span></h2>
+          <p class="feature-intro">A premium space for approved student journeys: the starting point, the work they made, the feedback they received and the next opportunity that followed.</p>
+          <div class="details">
+            <div class="detail"><label>Student</label><strong>Name to be confirmed</strong></div>
+            <div class="detail"><label>Course</label><strong>Course to be confirmed</strong></div>
+            <div class="detail"><label>Graduation</label><strong>Year to be confirmed</strong></div>
+            <div class="detail"><label>Role</label><strong>Outcome to be confirmed</strong></div>
+          </div>
+          <div class="company-lockup">
+            <span class="company-logo">ORG</span>
+            <div><small>Company / organisation</small><strong>Employer to be confirmed</strong></div>
+          </div>
+          <blockquote class="quote">“Approved student experience will appear here once consent and final copy are available.”</blockquote>
+          <button class="button button-secondary feature-video js-video" type="button" data-student="the featured student story"><span>▶</span> Watch student story</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="stories" id="stories">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><span class="eyebrow">Student testimonials</span><h2 style="margin-top:20px">Career journeys, told with care.</h2></div>
+          <p>Explore approved experiences connecting learning, practice and the next step in a career.</p>
+          <span class="content-status">Placeholders are marked until verified stories are added.</span>
+        </div>
+        <div class="filter-bar" role="group" aria-label="Filter student stories">
+          <button class="filter active" type="button" data-filter="all">All stories</button>
+          <button class="filter" type="button" data-filter="UG">UG</button>
+          <button class="filter" type="button" data-filter="PG">PG</button>
+          <button class="filter" type="button" data-filter="internship">Internships</button>
+          <button class="filter" type="button" data-filter="placement">Placements</button>
+          <button class="filter" type="button" data-filter="project">Projects</button>
+        </div>
+        <div class="story-grid">
+          <article class="story-card" data-type="UG" data-outcome="project">
+            <img class="story-image" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Placeholder image for a student project story">
+            <div class="story-body"><span class="story-tag">UG · Project journey</span><h3>Student identity pending.</h3><p>Approved project experience, learning milestones and student reflection will be added here.</p><div class="story-footer"><strong>Name pending · Year pending</strong><button class="story-read js-story" type="button" data-story="Project journey">View story ↗</button></div></div>
+          </article>
+          <article class="story-card" data-type="PG" data-outcome="internship">
+            <img class="story-image" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" alt="Placeholder image for a student internship story">
+            <div class="story-body"><span class="story-tag">PG · Internship journey</span><h3>Student identity pending.</h3><p>Verified course, graduation year, organisation and internship responsibilities will be added here.</p><div class="story-footer"><strong>Name pending · Year pending</strong><button class="story-read js-story" type="button" data-story="Internship journey">View story ↗</button></div></div>
+          </article>
+          <article class="story-card" data-type="UG" data-outcome="placement">
+            <img class="story-image" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80" alt="Placeholder image for a student placement story">
+            <div class="story-body"><span class="story-tag">UG · Career outcome</span><h3>Outcome to be confirmed.</h3><p>Company, role and personal experience will be published only after verification and student consent.</p><div class="story-footer"><strong>Company pending · Role pending</strong><button class="story-read js-story" type="button" data-story="Career outcome">View story ↗</button></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="voices" id="voices">
+      <div class="wrap voices-layout">
+        <div class="voices-title"><span class="eyebrow">In their own words</span><h2>Small shifts.<br>Big direction.</h2><p>Approved student reflections will show the human experience behind each career journey.</p></div>
+        <div class="voice-list">
+          <article class="voice js-video" data-student="the first student voice"><img class="voice-avatar" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=160&q=80" alt="Placeholder student portrait"><div><blockquote>“Student reflection pending approval.”</blockquote><cite>Name pending · Course and year pending</cite></div><span class="voice-arrow">↗</span></article>
+          <article class="voice js-video" data-student="the second student voice"><img class="voice-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80" alt="Placeholder student portrait"><div><blockquote>“Approved testimonial will be added here.”</blockquote><cite>Name pending · Course and year pending</cite></div><span class="voice-arrow">↗</span></article>
+          <article class="voice js-video" data-student="the third student voice"><img class="voice-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80" alt="Placeholder student portrait"><div><blockquote>“Personal experience pending consent.”</blockquote><cite>Name pending · Course and year pending</cite></div><span class="voice-arrow">↗</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="wrap">
+        <div class="projects-heading">
+          <span class="eyebrow">From classroom to creation</span>
+          <h2>Work worth <span>sharing.</span></h2>
+          <p class="projects-intro">A considered home for verified student projects, with the tools, context and live links that make the work easy to explore.</p>
+        </div>
+        <div class="project-filters" role="group" aria-label="Filter student projects">
+          <button class="project-filter active" type="button" data-project-filter="all">All projects</button>
+          <button class="project-filter" type="button" data-project-filter="AI / ML">AI / ML</button>
+          <button class="project-filter" type="button" data-project-filter="Web development">Web development</button>
+          <button class="project-filter" type="button" data-project-filter="Innovation">Innovation</button>
+        </div>
+        <div class="project-grid">
+          <article class="project-card" data-project-type="AI / ML">
+            <img class="project-image" src="https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=900&q=80" alt="Abstract AI interface on a laptop">
+            <div class="project-body"><span class="project-type">AI / ML · Featured</span><h3>Project title pending.</h3><p>Verified project description and student context will be added here. No achievement or outcome is being claimed.</p><div class="project-meta"><span>Technology pending</span><span>Tools pending</span><span>Context pending</span></div><div class="project-footer"><span>Student / course pending</span><a href="#connect">Request verified link ↗</a></div></div>
+          </article>
+          <article class="project-card" data-project-type="Web development">
+            <img class="project-image" src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=80" alt="Design sketches and a mobile app prototype">
+            <div class="project-body"><span class="project-type">Web development</span><h3>Project title pending.</h3><p>Approved project summary and use case will appear once the work is supplied.</p><div class="project-meta"><span>Technology pending</span><span>Role pending</span></div><div class="project-footer"><span>Student / course pending</span><a href="#connect">Request verified link ↗</a></div></div>
+          </article>
+          <article class="project-card" data-project-type="Innovation">
+            <img class="project-image" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80" alt="Student prototyping a physical product">
+            <div class="project-body"><span class="project-type">Innovation</span><h3>Project title pending.</h3><p>Verified description, process and technical details will be added here without inventing results.</p><div class="project-meta"><span>Methods pending</span><span>Tools pending</span></div><div class="project-footer"><span>Student / course pending</span><a href="#connect">Request verified link ↗</a></div></div>
+          </article>
+        </div>
+        <p class="projects-note">Project details shown are editable placeholders until approved student work is available.</p>
+      </div>
+    </section>
+
+    <section class="closing" id="connect">
+      <div class="wrap closing-inner">
+        <div><span class="eyebrow">Your next chapter</span><h2 style="margin-top:20px">A career is built one brave step at a time.</h2><a class="button button-primary" href="mailto:hello@example.com">Start a conversation ↗</a></div>
+        <p>Want to see your students represented here? Replace the editable placeholders with verified outcomes and real stories from your community.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© 2025 TechZentra</span><span>Student success, thoughtfully documented.</span></div></footer>
+  <a class="project-bubble" href="#projects">Explore Student Projects ↗</a>
+
+  <div class="modal" id="video-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" type="button" aria-label="Close video dialog">×</button>
+      <span class="eyebrow">Student voice</span>
+      <h2 id="modal-title">Watch the experience.</h2>
+      <p>This video space is ready for your institute’s approved testimonial embed. Add a hosted video URL when the final student footage is available.</p>
+      <div class="playback">▶ &nbsp; Video placeholder · Add approved testimonial</div>
+    </div>
+  </div>
+  <div class="modal" id="story-modal" role="dialog" aria-modal="true" aria-labelledby="story-modal-title">
+    <div class="modal-box story-modal-box">
+      <button class="modal-close story-modal-close" type="button" aria-label="Close full story dialog">×</button>
+      <span class="story-modal-meta" id="story-modal-meta">Student story</span>
+      <h2 id="story-modal-title">Verified student story</h2>
+      <p class="story-modal-copy">This story space is ready for approved content: the student’s starting point, work completed, skills developed and verified outcome.</p>
+      <p class="story-modal-note">Replace this placeholder only after receiving student consent, an approved photograph and verified programme / career details.</p>
+    </div>
+  </div>
+  <script>
+    const modal = document.querySelector("#video-modal");
+    const modalTitle = document.querySelector("#modal-title");
+    document.querySelectorAll(".js-video").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        modalTitle.textContent = `Watch ${trigger.dataset.student || "the experience"}.`;
+        modal.classList.add("open");
+        document.querySelector(".modal-close").focus();
+      });
+    });
+    const closeModal = () => modal.classList.remove("open");
+    document.querySelector(".modal-close").addEventListener("click", closeModal);
+    modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeModal(); });
+
+    document.querySelectorAll(".filter").forEach((filterButton) => {
+      filterButton.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach((button) => button.classList.remove("active"));
+        filterButton.classList.add("active");
+        const selected = filterButton.dataset.filter;
+        document.querySelectorAll(".story-card").forEach((card) => {
+          card.hidden = selected !== "all" && card.dataset.type !== selected && card.dataset.outcome !== selected;
+        });
+      });
+    });
+
+    const storyModal = document.querySelector("#story-modal");
+    const storyModalTitle = document.querySelector("#story-modal-title");
+    document.querySelectorAll(".js-story").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        storyModalTitle.textContent = trigger.dataset.story || "Verified student story";
+        storyModal.classList.add("open");
+        storyModal.querySelector(".story-modal-close").focus();
+      });
+    });
+    const closeStoryModal = () => storyModal.classList.remove("open");
+    storyModal.querySelector(".story-modal-close").addEventListener("click", closeStoryModal);
+    storyModal.addEventListener("click", (event) => { if (event.target === storyModal) closeStoryModal(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeStoryModal(); });
+
+    document.querySelectorAll(".project-filter").forEach((filterButton) => {
+      filterButton.addEventListener("click", () => {
+        document.querySelectorAll(".project-filter").forEach((button) => button.classList.remove("active"));
+        filterButton.classList.add("active");
+        const selected = filterButton.dataset.projectFilter;
+        document.querySelectorAll(".project-card").forEach((card) => {
+          card.hidden = selected !== "all" && card.dataset.projectType !== selected;
+        });
+      });
+    });
+  </script>
+  <script src="../../js/site-footer.js" defer></script>
+</body>
+</html>
