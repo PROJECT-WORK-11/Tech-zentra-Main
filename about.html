@@ -10,9 +10,54 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./About-US--main/style.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="/css/site-footer.css">
 </head>
 <body>
-  <main id="top">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container nav">
+      <a class="brand" href="/index.html" aria-label="Tech Zentra home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="brand-word">TECH<span>ZENTRA</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/pages/course-details/index.html#home">Courses</a>
+        <a href="/pages/internships/index.html">Internships</a>
+        <a href="/pages/placements/index.html">Placements</a>
+        <a href="/pages/testimonials/index.html">Success</a>
+        <a href="/about.html" class="is-active" aria-current="page">About Us</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="/contact.html" class="btn btn-primary btn-sm nav-cta">Start Learning <span class="arrow">→</span></a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="/index.html">Home</a>
+        <a href="/pages/course-details/index.html#home">Courses</a>
+        <a href="/pages/internships/index.html">Internships</a>
+        <a href="/pages/placements/index.html">Placements</a>
+        <a href="/pages/testimonials/index.html">Success</a>
+        <a href="/about.html" aria-current="page">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/contact.html" class="btn btn-primary">Start Learning <span class="arrow">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <script src="/js/home.js" defer></script>
+
+  <main id="main">
     <section class="reference-hero section" id="about">
       <div class="container reference-hero-inner">
         <div class="reference-hero-copy reveal">
@@ -352,6 +397,8 @@
     </div>
   </footer>
 
+  <footer id="site-footer"></footer>
+  <script src="/public/js/site-footer.js" defer></script>
   <script>
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
