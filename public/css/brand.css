@@ -476,8 +476,9 @@ b {
 .tech-marquee,
 .logo-strip,
 .company-strip {
-  background: var(--brand-white) !important;
-  border-block: 1px solid var(--brand-border) !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 .tech-icon,
