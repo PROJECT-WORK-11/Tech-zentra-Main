@@ -674,16 +674,67 @@ b {
   color: var(--brand-muted) !important;
 }
 
-.program--hero,
 .program--sage,
 .program-featured {
   background: var(--brand-white) !important;
   color: var(--brand-ink) !important;
 }
 
-.program--hero .program-bg,
+.program--hero,
+.program--dark {
+  background: var(--brand-ink) !important;
+  color: var(--brand-white) !important;
+}
+
 .program-bg {
   opacity: 0.16;
+}
+
+.program--hero .program-bg,
+.program--dark .program-bg {
+  opacity: 1 !important;
+  filter: saturate(1.05) contrast(1.05) !important;
+}
+
+.program--hero::after,
+.program--dark::after {
+  background: linear-gradient(180deg, rgba(21, 21, 21, 0.2) 0%, rgba(21, 21, 21, 0.82) 100%) !important;
+}
+
+.program--hero h3,
+.program--dark h3,
+.program--hero .program-meta b,
+.program--dark .program-meta b {
+  color: var(--brand-white) !important;
+}
+
+.program--hero p,
+.program--dark p,
+.program--hero .program-kicker,
+.program--dark .program-kicker,
+.program--hero .program-meta,
+.program--dark .program-meta {
+  color: var(--brand-yellow-soft) !important;
+}
+
+.program--hero .program-level,
+.program--dark .program-level,
+.program--hero .program-link,
+.program--dark .program-link {
+  color: var(--brand-yellow) !important;
+  border-color: var(--brand-yellow) !important;
+}
+
+.program--hero .program-topics li,
+.program--dark .program-topics li {
+  border-color: rgba(255, 240, 179, 0.35) !important;
+  background: rgba(21, 21, 21, 0.35) !important;
+  color: var(--brand-white) !important;
+}
+
+.program--hero .program-footer,
+.program--dark .program-footer {
+  border-top-color: rgba(255, 240, 179, 0.28) !important;
 }
 
 a,
