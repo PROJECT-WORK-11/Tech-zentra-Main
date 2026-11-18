@@ -74,7 +74,7 @@
 .tz-path:hover {
   transform: translateY(-4px);
   border-color: var(--line-strong);
-  box-shadow: 0 22px 50px rgba(36, 39, 34, 0.09);
+  box-shadow: 0 22px 50px rgba(21, 21, 21, 0.09);
 }
 
 .tz-path-index {
@@ -157,14 +157,14 @@
   padding: 26px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: #fffefa;
+  background: #ffffff;
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .tz-intern-card:hover {
   transform: translateY(-4px);
   border-color: var(--line-strong);
-  box-shadow: 0 18px 42px rgba(36, 39, 34, 0.09);
+  box-shadow: 0 18px 42px rgba(21, 21, 21, 0.09);
 }
 
 .tz-intern-card.is-hidden {
@@ -328,7 +328,7 @@
   min-width: 320px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(85, 116, 95, 0.22), transparent 68%);
+  background: radial-gradient(circle, rgba(255, 201, 40, 0.22), transparent 68%);
   pointer-events: none;
 }
 
@@ -338,7 +338,7 @@
 }
 
 .tz-placement .eyebrow {
-  color: rgba(247, 245, 239, 0.62);
+  color: rgba(255, 249, 233, 0.62);
 }
 
 .tz-placement .eyebrow::before {
@@ -350,11 +350,11 @@
 }
 
 .tz-placement h2 span {
-  color: #b7d0bc;
+  color: #f0e4c5;
 }
 
 .tz-placement .tz-head-desc {
-  color: rgba(247, 245, 239, 0.6);
+  color: rgba(255, 249, 233, 0.6);
 }
 
 .tz-place-stats {
@@ -362,10 +362,10 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   margin-bottom: clamp(40px, 5vw, 60px);
-  border: 1px solid rgba(247, 245, 239, 0.15);
+  border: 1px solid rgba(255, 249, 233, 0.15);
   border-radius: 14px;
   overflow: hidden;
-  background: rgba(247, 245, 239, 0.15);
+  background: rgba(255, 249, 233, 0.15);
 }
 
 .tz-place-stat {
@@ -375,7 +375,7 @@
 
 .tz-place-stat strong {
   display: block;
-  color: #b7d0bc;
+  color: #f0e4c5;
   font-family: var(--font-head);
   font-size: clamp(2rem, 3.6vw, 2.9rem);
   font-weight: 800;
@@ -386,7 +386,7 @@
 .tz-place-stat span {
   display: block;
   margin-top: 10px;
-  color: rgba(247, 245, 239, 0.56);
+  color: rgba(255, 249, 233, 0.56);
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -395,7 +395,7 @@
 
 .tz-place-stat p {
   margin: 10px 0 0;
-  color: rgba(247, 245, 239, 0.52);
+  color: rgba(255, 249, 233, 0.52);
   font-size: 12px;
   line-height: 1.55;
 }
@@ -408,16 +408,16 @@
 
 .tz-support-card {
   padding: 26px;
-  border: 1px solid rgba(247, 245, 239, 0.14);
+  border: 1px solid rgba(255, 249, 233, 0.14);
   border-radius: 14px;
-  background: rgba(247, 245, 239, 0.035);
+  background: rgba(255, 249, 233, 0.035);
   transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease);
 }
 
 .tz-support-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(183, 208, 188, 0.5);
-  background: rgba(247, 245, 239, 0.06);
+  border-color: rgba(240, 228, 197, 0.5);
+  background: rgba(255, 249, 233, 0.06);
 }
 
 .tz-support-num {
@@ -438,7 +438,7 @@
 
 .tz-support-card p {
   margin: 0;
-  color: rgba(247, 245, 239, 0.58);
+  color: rgba(255, 249, 233, 0.58);
   font-size: 13.5px;
   line-height: 1.6;
 }
@@ -452,13 +452,13 @@
 
 .tz-roadmap-step {
   padding: 22px 18px;
-  border-top: 2px solid rgba(247, 245, 239, 0.22);
+  border-top: 2px solid rgba(255, 249, 233, 0.22);
   transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
 }
 
 .tz-roadmap-step:hover {
   border-top-color: var(--terracotta);
-  background: rgba(247, 245, 239, 0.04);
+  background: rgba(255, 249, 233, 0.04);
 }
 
 .tz-roadmap-step span {
@@ -466,7 +466,7 @@
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.12em;
-  color: #b7d0bc;
+  color: #f0e4c5;
 }
 
 .tz-roadmap-step h3 {
@@ -481,7 +481,7 @@
 
 .tz-roadmap-step p {
   margin: 0;
-  color: rgba(247, 245, 239, 0.55);
+  color: rgba(255, 249, 233, 0.55);
   font-size: 12.5px;
   line-height: 1.55;
 }
@@ -501,14 +501,14 @@
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: #fffefa;
+  background: #ffffff;
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .tz-testi-card:hover {
   transform: translateY(-4px);
   border-color: var(--line-strong);
-  box-shadow: 0 18px 42px rgba(36, 39, 34, 0.09);
+  box-shadow: 0 18px 42px rgba(21, 21, 21, 0.09);
 }
 
 .tz-testi-card.is-hidden {

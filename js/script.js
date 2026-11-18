@@ -283,7 +283,7 @@
         if (p.y < 0 || p.y > particleCanvas.height) p.vy *= -1;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(108, 99, 255, 0.4)";
+        ctx.fillStyle = "rgba(255, 201, 40, 0.4)";
         ctx.fill();
       });
       for (let i = 0; i < particles.length; i++) {
@@ -295,7 +295,7 @@
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(108, 99, 255, ${0.12 * (1 - dist / 120)})`;
+            ctx.strokeStyle = `rgba(255, 201, 40, ${0.12 * (1 - dist / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -1053,7 +1053,7 @@
         if (p.y < 0 || p.y > ctaCanvas.height) p.vy *= -1;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0, 217, 255, 0.3)";
+        ctx.fillStyle = "rgba(255, 216, 77, 0.3)";
         ctx.fill();
       });
       for (let i = 0; i < ctaParticles.length; i++) {
@@ -1065,7 +1065,7 @@
             ctx.beginPath();
             ctx.moveTo(ctaParticles[i].x, ctaParticles[i].y);
             ctx.lineTo(ctaParticles[j].x, ctaParticles[j].y);
-            ctx.strokeStyle = `rgba(0, 217, 255, ${0.1 * (1 - dist / 100)})`;
+            ctx.strokeStyle = `rgba(255, 216, 77, ${0.1 * (1 - dist / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

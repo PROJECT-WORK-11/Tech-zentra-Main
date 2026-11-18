@@ -1,0 +1,19 @@
+:root {
+  --brand-yellow: #ffc928;
+  --brand-yellow-secondary: #ffd84d;
+  --brand-yellow-deep: #e5b400;
+  --brand-yellow-soft: #fff0b3;
+  --brand-cream: #fff9e9;
+  --brand-white: #ffffff;
+  --brand-ink: #151515;
+  --brand-muted: #737373;
+  --brand-border: #f0e4c5;
+  --brand-font-head: "Manrope", "Inter", system-ui, sans-serif;
+  --brand-font-body: "Inter", system-ui, sans-serif;
+  --brand-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --brand-radius: 14px;
+  --brand-radius-sm: 8px;
+  --brand-shadow: 0 10px 32px rgba(21, 21, 21, 0.07);
+  --brand-shadow-hover: 0 18px 42px rgba(21, 21, 21, 0.12);
+  --brand-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}

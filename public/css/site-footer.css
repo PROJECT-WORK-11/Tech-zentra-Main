@@ -4,13 +4,13 @@
    ============================================================ */
 
 :root {
-  --sf-ivory: #f7f5ef;
-  --sf-charcoal: #242722;
-  --sf-charcoal-soft: #3d4139;
-  --sf-sage: #55745f;
-  --sf-terracotta: #b87558;
-  --sf-muted: #62685e;
-  --sf-line: rgba(36, 39, 34, 0.13);
+  --sf-ivory: #fff9e9;
+  --sf-charcoal: #151515;
+  --sf-charcoal-soft: #151515;
+  --sf-sage: #ffc928;
+  --sf-terracotta: #ffd84d;
+  --sf-muted: #737373;
+  --sf-line: rgba(21, 21, 21, 0.13);
   --sf-font-head: "Manrope", system-ui, sans-serif;
   --sf-font-body: "Inter", system-ui, sans-serif;
   --sf-font-mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -174,7 +174,7 @@
 
 .site-footer .social-link:hover {
   border-color: var(--sf-sage);
-  background: rgba(85, 116, 95, 0.05);
+  background: rgba(255, 201, 40, 0.05);
   color: var(--sf-sage);
 }
 

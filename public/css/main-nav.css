@@ -6,13 +6,13 @@
    ============================================================ */
 
 :root {
-  --nav-ivory: #f7f5ef;
-  --nav-charcoal: #242722;
-  --nav-charcoal-soft: #3d4139;
-  --nav-sage: #55745f;
-  --nav-terracotta: #b87558;
-  --nav-line: rgba(36, 39, 34, 0.13);
-  --nav-line-strong: rgba(36, 39, 34, 0.24);
+  --nav-ivory: #fff9e9;
+  --nav-charcoal: #151515;
+  --nav-charcoal-soft: #151515;
+  --nav-sage: #ffc928;
+  --nav-terracotta: #ffd84d;
+  --nav-line: rgba(21, 21, 21, 0.13);
+  --nav-line-strong: rgba(21, 21, 21, 0.24);
   --nav-font-head: "Manrope", system-ui, sans-serif;
   --nav-font-body: "Inter", system-ui, sans-serif;
   --nav-font-mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -62,7 +62,7 @@ main section[id] {
 }
 
 .site-header.is-scrolled {
-  background: rgba(247, 245, 239, 0.9);
+  background: rgba(255, 249, 233, 0.9);
   border-bottom-color: var(--nav-line);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
